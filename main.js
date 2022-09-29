@@ -1,6 +1,26 @@
-import './style.css'
+// Есть блок с текстом на странице и кнопка. 
+// При нажатии на кнопку текст изменяет цвет.
+//  При повторном нажатии – возвращается предыдущий цвет
 
-document.querySelector('#app').innerHTML = `
-  <h1>Hello Vite!</h1>
-  <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
-`
+let textSwapColor = document.querySelector('.js--textSwapColor')
+let buttonForSwapColor = document.querySelector('.js--buttonForSwapColor')
+textSwapColor.style.color = 'black'
+
+
+
+buttonForSwapColor.addEventListener('click', swapColor)
+
+
+// buttonForSwapColor.removeEventListener('click' , swapColor)
+
+
+function swapColor() {
+  if (textSwapColor.style.color === 'black') {
+    textSwapColor.style.color = 'red'
+  }
+  else if (textSwapColor.style.color !=='black') {
+    textSwapColor.style.color = 'black'
+  }
+}
+
+
